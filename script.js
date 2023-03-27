@@ -5,11 +5,12 @@ let playerEl = document.getElementById('player');
 let computerEl = document.getElementById('computer');
 let outcomeEl = document.getElementById('outcome')
 let playerHandImg = document.getElementById("player-hand")
+let computerHandImg = document.getElementById("computer-hand")
 //button selection
 btn.forEach((button) => { 
     button.addEventListener ('click', (event) => {
         playerSelection =event.target.id;
-        playerHandImg.src=`images/p-${playerSelection}.png`;  // 3/27 1:58pm: updates player's hand
+       
         game();
         })
 });
@@ -45,7 +46,9 @@ function gameOutcome () {
 
 //game results:
 function game () {
+    playerHandImg.src=`images/p-${playerSelection}.png`;  // 3/27 1:58pm: updates player's hand
     computerSelection = ranNum();
+    computerHandImg.src=`images/p-${computerSelection}.png`;
     playerEl.textContent = `player:${playerSelection}`;
     computerEl.textContent = `computer: ${computerSelection}`;
     gameOutcome();
