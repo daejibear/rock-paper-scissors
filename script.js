@@ -8,33 +8,12 @@ let outcomeEl = document.getElementById('outcome')
 //playerSelection
 btn.forEach((button) => { 
     button.addEventListener ('click', (event) => {
- playerSelection =event.target.id;
- playerEl.textContent = `player:${playerSelection}`;
- computerEl.textContent = `computer: ${computerSelection}`;
+        playerSelection =event.target.id;
+        console.log(playerSelection);
+        game();
+        })
 
-if (playerSelection == "rock" && computerSelection == "scissors") {  
-outcomeEl.textContent = "player wins!"
-computerSelection = ranNum ();
-} else if (playerSelection == "paper" && computerSelection == "rock") {
-    outcomeEl.textContent = "player wins!"
-computerSelection = ranNum ();
-} else if (playerSelection == "scissors" && computerSelection == "paper") {
-    outcomeEl.textContent = "player wins!"
-computerSelection = ranNum ();
-} else if ( playerSelection == "scissors" && computerSelection == "scissors") {
-    outcomeEl.textContent = "it's a draw!"
-computerSelection = ranNum ();
-} else if ( playerSelection == "paper" && computerSelection == "paper") {
-    outcomeEl.textContent = "it's a draw!"
-    computerSelection = ranNum ();
-} else if ( playerSelection == "rock" && computerSelection == "rock") {
-    outcomeEl.textContent = "it's a draw!"
-    computerSelection = ranNum ();
-} else {
-    outcomeEl.textContent = "computer wins!";
-    computerSelection = ranNum ();
-}
-})});
+});
 
 
 //computerSelection
@@ -52,9 +31,32 @@ randomNumber =
 //game
 
 
+function gameOutcome () {
+    if (playerSelection == "rock" && computerSelection == "scissors") {  
+        outcomeEl.textContent = "player wins!"
+        } else if (playerSelection == "paper" && computerSelection == "rock") {
+            outcomeEl.textContent = "player wins!"
+        } else if (playerSelection == "scissors" && computerSelection == "paper") {
+            outcomeEl.textContent = "player wins!"
+        } else if ( playerSelection == "scissors" && computerSelection == "scissors") {
+            outcomeEl.textContent = "it's a draw!"
+        } else if ( playerSelection == "paper" && computerSelection == "paper") {
+            outcomeEl.textContent = "it's a draw!"
+        } else if ( playerSelection == "rock" && computerSelection == "rock") {
+            outcomeEl.textContent = "it's a draw!"
+        } else {
+            outcomeEl.textContent = "computer wins!";
+        }
+    };
 
 
+function game () {
+    computerSelection = ranNum();
+    playerEl.textContent = `player:${playerSelection}`;
+    computerEl.textContent = `computer: ${computerSelection}`;
+    gameOutcome();
 
+}
 /* pseudocode process:
 game rule:
 
