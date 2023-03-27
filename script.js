@@ -19,7 +19,7 @@ btn.forEach((button) => {
     button.addEventListener ('click', (event) => {
         playerSelection =event.target.id;
        
-        game();
+        setTimeout("game()",2000);
         })
 });
 
@@ -121,4 +121,8 @@ paper beats rock
 scissors beats paper
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+when button is pressed: delay 1second game function ()
+animate both hands
 */
+
