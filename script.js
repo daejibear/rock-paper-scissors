@@ -1,7 +1,13 @@
 let playerSelection = null;
 let randomNumber = ranNum();
 let computerSelection = null;
-let playerButtons = document.querySelectorAll("[data-choice")
+let btn = document.querySelectorAll('button');
+
+btn.forEach(function (button){ 
+    button.addEventListener ('click', function (event) {
+	console.log(event.target); // The clicked element
+})});
+
 
 function ranNum () {
 return Math.floor(Math.random() *3)
@@ -15,8 +21,6 @@ computerSelection =
 }
 
 
-
-console.log(computerSelection);
 
 
 function game() {
