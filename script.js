@@ -1,16 +1,22 @@
 let playerSelection = null;
+let randomNumber = ranNum();
 let computerSelection = null;
-let randomChoice = ranNum();
+let playerButtons = document.querySelectorAll("[data-choice")
 
 function ranNum () {
 return Math.floor(Math.random() *3)
 }
 
-console.log(randomChoice);
-
 function getComputerChoice () {
-
+computerSelection = 
+(randomNumber === 0)  ? "rock" :
+(randomNumber === 1) ? "paper" :
+ "scissors" ;
 }
+
+
+
+console.log(computerSelection);
 
 
 function game() {
