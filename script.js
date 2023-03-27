@@ -1,32 +1,58 @@
 let playerSelection = null;
-let randomNumber = ranNum();
-let computerSelection = null;
+let computerSelection = ranNum ();
 let btn = document.querySelectorAll('button');
+let playerEl = document.getElementById('player');
+let computerEl = document.getElementById('computer');
+let outcomeEl = document.getElementById('outcome')
 
+//playerSelection
 btn.forEach((button) => { 
     button.addEventListener ('click', (event) => {
-	console.log(event.target); // The clicked element
+ playerSelection =event.target.id;
+ playerEl.textContent = `player:${playerSelection}`;
+ computerEl.textContent = `computer: ${computerSelection}`;
+
+if (playerSelection == "rock" && computerSelection == "scissors") {  
+outcomeEl.textContent = "player wins!"
+computerSelection = ranNum ();
+} else if (playerSelection == "paper" && computerSelection == "rock") {
+    outcomeEl.textContent = "player wins!"
+computerSelection = ranNum ();
+} else if (playerSelection == "scissors" && computerSelection == "paper") {
+    outcomeEl.textContent = "player wins!"
+computerSelection = ranNum ();
+} else if ( playerSelection == "scissors" && computerSelection == "scissors") {
+    outcomeEl.textContent = "it's a draw!"
+computerSelection = ranNum ();
+} else if ( playerSelection == "paper" && computerSelection == "paper") {
+    outcomeEl.textContent = "it's a draw!"
+    computerSelection = ranNum ();
+} else if ( playerSelection == "rock" && computerSelection == "rock") {
+    outcomeEl.textContent = "it's a draw!"
+    computerSelection = ranNum ();
+} else {
+    outcomeEl.textContent = "computer wins!";
+    computerSelection = ranNum ();
+}
 })});
 
 
+//computerSelection
 function ranNum () {
-return Math.floor(Math.random() *3)
-}
-
-function getComputerChoice () {
-computerSelection = 
+ let randomNumber = Math.floor(Math.random() *3)
+randomNumber = 
 (randomNumber === 0)  ? "rock" :
 (randomNumber === 1) ? "paper" :
  "scissors" ;
-}
-
-
-
-
-function game() {
+ return randomNumber;
 
 
 }
+
+//game
+
+
+
 
 
 /* pseudocode process:
@@ -43,5 +69,13 @@ computer selection = 3 choices --- determined by a random Choice generation 0-2
 game process:
 
 player selects option --> computer choice --> output
+
+
+
+
+rock beats scissors
+paper beats rock
+scissors beats paper
+
 
 */
