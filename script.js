@@ -5,18 +5,16 @@ let playerEl = document.getElementById('player');
 let computerEl = document.getElementById('computer');
 let outcomeEl = document.getElementById('outcome')
 
-//playerSelection
+//button selection
 btn.forEach((button) => { 
     button.addEventListener ('click', (event) => {
         playerSelection =event.target.id;
         console.log(playerSelection);
         game();
         })
-
 });
 
-
-//computerSelection
+//computerSelection:
 function ranNum () {
  let randomNumber = Math.floor(Math.random() *3)
 randomNumber = 
@@ -24,13 +22,9 @@ randomNumber =
 (randomNumber === 1) ? "paper" :
  "scissors" ;
  return randomNumber;
-
-
 }
 
-//game
-
-
+//game rules:
 function gameOutcome () {
     if (playerSelection == "rock" && computerSelection == "scissors") {  
         outcomeEl.textContent = "player wins!"
@@ -49,13 +43,12 @@ function gameOutcome () {
         }
     };
 
-
+//game results:
 function game () {
     computerSelection = ranNum();
     playerEl.textContent = `player:${playerSelection}`;
     computerEl.textContent = `computer: ${computerSelection}`;
     gameOutcome();
-
 }
 /* pseudocode process:
 game rule:

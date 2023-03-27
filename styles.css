@@ -1,3 +1,7 @@
 body {
-    background-color: 
+    background-color: beige;
+}
+
+.computer-hand {
+    transform: scaleX(-1);
 }
