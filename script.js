@@ -3,8 +3,8 @@ let randomNumber = ranNum();
 let computerSelection = null;
 let btn = document.querySelectorAll('button');
 
-btn.forEach(function (button){ 
-    button.addEventListener ('click', function (event) {
+btn.forEach((button) => { 
+    button.addEventListener ('click', (event) => {
 	console.log(event.target); // The clicked element
 })});
 
