@@ -8,22 +8,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<p>Sunny's Rock Paper Scissors</p>
-<p id="player"></p>
+    <div class="wrap">
+<p id="title">Sunny's Rock Paper Scissors</p>
 
-<div class="hands">
+
 <div>
     <img src="images/p-rock.png" id="player-hand"alt="Player's Hand"> 
     <img class="computer-hand" id="computer-hand" src="images/p-rock.png" alt="Computer's Hand"> 
 </div>
-</div>
 
-
-<p id="computer"></p>
-<p id="outcome"></p>
-<button class="button" id="rock">rock</button>
+ <button class="button" id="rock">rock</button>
 <button class="button" id="paper">paper</button>
-<button class="button" id="scissors">scissors</button>
+<button class="button" id="scissors">scissors</button> 
+
+<p>Player Score:</p>
+<p id="player-score">0</p> 
+<p>Computer Score:</p>
+<p id="computer-score">0</p>
+<p id="player"></p>
+<p id="computer"></p>
+<p id="outcome"></p> 
+</div>
 <script src=script.js></script>
 </body>
 </html>
