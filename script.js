@@ -4,12 +4,12 @@ let btn = document.querySelectorAll('button');
 let playerEl = document.getElementById('player');
 let computerEl = document.getElementById('computer');
 let outcomeEl = document.getElementById('outcome')
-
+let playerHandImg = document.getElementById("player-hand")
 //button selection
 btn.forEach((button) => { 
     button.addEventListener ('click', (event) => {
         playerSelection =event.target.id;
-        console.log(playerSelection);
+        playerHandImg.src=`images/p-${playerSelection}.png`;  // 3/27 1:58pm: updates player's hand
         game();
         })
 });
@@ -26,7 +26,7 @@ randomNumber =
 
 //game rules:
 function gameOutcome () {
-    if (playerSelection == "rock" && computerSelection == "scissors") {  
+    if (playerSelection == "rock" && computerSelection == "scissors") {
         outcomeEl.textContent = "player wins!"
         } else if (playerSelection == "paper" && computerSelection == "rock") {
             outcomeEl.textContent = "player wins!"
