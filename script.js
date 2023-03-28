@@ -17,9 +17,47 @@ let computerScore = 0;
 //button selection
 btn.forEach((button) => { 
     button.addEventListener ('click', (event) => {
-        playerSelection =event.target.id;
+
+//code for player hand shake - 3/28 - Researched code for javascript transformation properties ---
+        playerHandImg.src=`images/p-rock.png`; // this keeps it so when We press the button, it goes back to rock (starting position)
+        playerHandImg.animate ([{ transform: 'translateY(0px)' },
+  { transform: 'translateY(-100px)'},
+  { transform: 'translateY(0px)' }, 
+  { transform: 'translateY(-100px)' },
+  { transform: 'translateY(0px)' }, 
+  { transform: 'translateY(-100px)' },
+  { transform: 'translateY(0px)' }
+], {
+  // sync options
+  duration: 1500, // should match the setTimeout("game()") -- to reveal the results
+  iterations: 1 //this repeats the animation 1 time only.
+});
+
+// code for computer hand shake
+computerHandImg.src=`images/p-rock.png`; // this keeps it so when We press the button, it goes back to rock (starting position)
+computerHandImg.animate ([{ transform: 'translateY(0px) scaleX(-1)' },
+{ transform: 'translateY(-100px) scaleX(-1)' },
+{ transform: 'translateY(0px) scaleX(-1)' }, 
+{ transform: 'translateY(-100px) scaleX(-1)' },
+{ transform: 'translateY(0px) scaleX(-1)' }, 
+{ transform: 'translateY(-100px) scaleX(-1)' },
+{ transform: 'translateY(0px) scaleX(-1)' }
+], {
+    // sync options
+    duration: 1500, // should match the setTimeout("game()") -- to reveal the results
+    iterations: 1 //this repeats the animation 1 time only.
+  });
+
+
+
+// ***To remove repetition, we will make a function for handshake and use the variable: player/computer.
+
+
+
+
+playerSelection = event.target.id; // this will be what the player picked, output will be "rock", "paper" or "scissors"
        
-        setTimeout("game()",2000);
+        setTimeout("game()",1500);
         })
 });
 
@@ -32,6 +70,7 @@ randomNumber =
  "scissors" ;
  return randomNumber;
 }
+
 
 //game rules:
 function gameOutcome () {
@@ -82,7 +121,7 @@ function game () {
 computerScoreEl.textContent = computerScore;
 
 
-setTimeout("score()",500);
+setTimeout("score()",10);
 
 
 
