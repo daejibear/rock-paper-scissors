@@ -12,6 +12,36 @@ let playerScore = 0;
 let computerScore = 0;
 
 //player Score Count
+playerHandImg.src=`images/p-rock.png`; // this keeps it so when We press the button, it goes back to rock (starting position)
+playerHandImg.animate ([{ transform: 'translateY(0px)' },
+{ transform: 'translateY(-10px)'},
+{ transform: 'translateY(0px)' }, 
+{ transform: 'translateY(-10px)' },
+{ transform: 'translateY(0px)' }, 
+{ transform: 'translateY(-10px)' },
+{ transform: 'translateY(0px)' }
+], {
+// sync options
+duration: 7777, // should match the setTimeout("game()") -- to reveal the results
+iterations: 10000 //this repeats the animation 1 time only.
+});
+
+// code for computer hand shake
+computerHandImg.src=`images/p-rock.png`; // this keeps it so when We press the button, it goes back to rock (starting position)
+computerHandImg.animate ([{ transform: 'translateY(0px) scaleX(-1)' },
+{ transform: 'translateY(10px) scaleX(-1)' },
+{ transform: 'translateY(0px) scaleX(-1)' }, 
+{ transform: 'translateY(10px) scaleX(-1)' },
+{ transform: 'translateY(0px) scaleX(-1)' }, 
+{ transform: 'translateY(10px) scaleX(-1)' },
+{ transform: 'translateY(0px) scaleX(-1)' }
+], {
+// sync options
+duration: 7777, // should match the setTimeout("game()") -- to reveal the results
+iterations: 10000 //this repeats the animation 1 time only.
+});
+
+
 
 
 //button selection
