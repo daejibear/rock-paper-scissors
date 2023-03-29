@@ -1,10 +1,18 @@
 body {
     font-family: 'Comfortaa', cursive;
     font-family: 'Roboto', sans-serif;
-    margin:0px;
-    padding:0px;
-    background-color: rgb(223, 221, 204);
+    margin: auto;
+    width: 100%;
+    background-color: rgb(236, 236, 236);
     color:rgb(0, 0, 0);
+}
+
+.top {
+    background-color:rgb(255, 210, 189);
+    margin:auto;
+    text-align:center;
+    height:130px;
+
 }
 
 img {
@@ -25,11 +33,14 @@ font-size:30px;
 
 
 #title {
+
+    color:black;
     font-family: 'Comfortaa', cursive;
     margin:0px;
     font-size: 100px;
 }
 #outcome {
+
     font-family: 'Comfortaa', cursive;
     font-family: 'Roboto', sans-serif;
     font-size:30px;
@@ -74,11 +85,4 @@ margin:10px;
   top: 5px;
   left: 5px;
 }
-
-@media (min-width: 768px) {
-  .button {
-    padding: 0.25em 0.75em;
-  }
-}
-
 
