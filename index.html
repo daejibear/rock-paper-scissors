@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +13,28 @@
 </head>
 <body>
     <div class="wrap">
-<p id="title">Sunny's Rock Paper Scissors</p>
-
+<p id="title">pooparino</p>
+<p id="outcome">Rock Paper Scissors</p> 
 
 <div>
     <img src="images/p-rock.png" id="player-hand"alt="Player's Hand">
     <img class="computer-hand" id="computer-hand" src="images/p-rock.png" alt="Computer's Hand"> 
 </div>
 
- <button class="button" id="rock">rock</button>
-<button class="button" id="paper">paper</button>
-<button class="button" id="scissors">scissors</button> 
+<p>Score:</p>
+<p><span id="player-score" >0</span> : <span id="computer-score" >0</span></p>
 
-<p>Player Score:</p>
-<p id="player-score">0</p> 
-<p>Computer Score:</p>
-<p id="computer-score">0</p>
-<p id="player"></p>
-<p id="computer"></p>
-<p id="outcome"></p> 
+
+<!-- this is player/comp output: <p id="player"></p>
+<p id="computer"></p> -->
+
+
+<button class="button" id="rock">Rock</button>
+<button class="button" id="paper">Paper</button>
+<button class="button" id="scissors">Scissors</button> 
+
+
+
 </div>
 <script src=script.js></script>
 </body>

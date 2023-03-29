@@ -105,22 +105,22 @@ randomNumber =
 //game rules:
 function gameOutcome () {
     if (playerSelection == "rock" && computerSelection == "scissors") {
-        outcomeEl.textContent = "player wins!";
+        outcomeEl.textContent = "You win!";
      playerScore += 1;
         } else if (playerSelection == "paper" && computerSelection == "rock") {
-            outcomeEl.textContent = "player wins!";
+            outcomeEl.textContent = "You win!";
             playerScore += 1;
         } else if (playerSelection == "scissors" && computerSelection == "paper") {
-            outcomeEl.textContent = "player wins!";
+            outcomeEl.textContent = "You win!";
             playerScore += 1;
         } else if ( playerSelection == "scissors" && computerSelection == "scissors") {
-            outcomeEl.textContent = "it's a draw!";
+            outcomeEl.textContent = "It's a draw!";
         } else if ( playerSelection == "paper" && computerSelection == "paper") {
-            outcomeEl.textContent = "it's a draw!";
+            outcomeEl.textContent = "It's a draw!";
         } else if ( playerSelection == "rock" && computerSelection == "rock") {
-            outcomeEl.textContent = "it's a draw!";
+            outcomeEl.textContent = "It's a draw!";
         } else {
-            outcomeEl.textContent = "computer wins!";
+            outcomeEl.textContent = "Computer wins!";
           computerScore += 1;
         }
     };
@@ -143,8 +143,8 @@ function game () {
     playerHandImg.src=`images/p-${playerSelection}.png`;  // 3/27 1:58pm: updates player's hand
     computerSelection = ranNum();
     computerHandImg.src=`images/p-${computerSelection}.png`;
-    playerEl.textContent = `player:${playerSelection}`;
-    computerEl.textContent = `computer: ${computerSelection}`;
+    // - this is player output: playerEl.textContent = `player:${playerSelection}`;
+    //- this is computer output: computerEl.textContent = `computer: ${computerSelection}`;
     console.log(`before${playerScore}`)
     gameOutcome();
     playerScoreEl.textContent = playerScore;
@@ -193,5 +193,8 @@ scissors beats paper
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 when button is pressed: delay 1second game function ()
 animate both hands
-*/
 
+3-29:
+display "pop up div" which resets the game after the game ends (3 rounds)
+
+*/
