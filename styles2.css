@@ -1,0 +1,70 @@
+body, html {
+    margin: auto;
+    padding:0px;
+    width: 100%;
+}
+.wrapper {
+
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:auto;
+    grid-template-areas: 
+      "header header header header header header"
+      "game-title game-title game-title game-title game-title game-title"
+      "player player score score computer computer "
+      "player-hand player-hand player-hand computer-hand computer-hand computer-hand"
+      "rock rock paper paper scissors scissors";
+}
+
+.header {
+    grid-area: header;
+    background-color:aqua;
+}
+
+.game-title{
+    grid-area: game-title;
+    background-color:rgb(189, 234, 141);
+}
+
+.players {
+    grid-area: player;
+    background-color:rgb(7, 129, 7);
+}
+
+.score {
+    grid-area: score;
+    background-color:rgb(0, 228, 102);
+}
+
+.computer {
+    grid-area: computer;
+    background-color:rgb(235, 89, 198);
+}
+
+.player-hand {
+    grid-area: player-hand;
+    background-color:rgb(197, 123, 38);
+}
+
+.computer-hand{
+    grid-area: computer-hand;
+    background-color:rgb(199, 47, 80);
+}
+
+
+.rock {
+    grid-area: rock;
+    background-color:rgb(130, 177, 43);
+}
+
+.paper {
+    grid-area: paper;
+    background-color:rgb(29, 27, 160);
+}
+
+
+.scissors {
+    grid-area: scissors;
+    background-color:rgb(18, 97, 97);
+}
