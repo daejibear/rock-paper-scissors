@@ -4,7 +4,8 @@ body, html {
     width: 100%;
 }
 .wrapper {
-
+width: 768px;
+margin:auto;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -19,7 +20,14 @@ body, html {
 
 .header {
     grid-area: header;
-    background-color:aqua;
+    background-color:rgb(131, 108, 196);
+}
+
+.header-text {
+    text-align:center;
+    color:white;
+    font-family: 'Comfortaa', cursive;
+    font-size:3rem;
 }
 
 .game-title{
