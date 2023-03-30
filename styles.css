@@ -28,12 +28,11 @@ img {
  }
 
 p {
-font-size:30px;
+font: size 2rem;;
 }
 
 
 #title {
-
     color:black;
     font-family: 'Comfortaa', cursive;
     margin:0px;
@@ -44,6 +43,10 @@ font-size:30px;
     font-family: 'Comfortaa', cursive;
     font-family: 'Roboto', sans-serif;
     font-size:30px;
+
+}
+
+.computer-hand-wrapper {
 
 }
 

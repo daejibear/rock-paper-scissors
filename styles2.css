@@ -1,4 +1,6 @@
 body, html {
+    background-color:hsl(183, 100%, 96%);
+    font-family: 'Roboto', sans-serif;
     margin: auto;
     padding:0px;
     width: 100%;
@@ -13,66 +15,110 @@ margin:auto;
     grid-template-areas: 
       "header header header header header header"
       "game-title game-title game-title game-title game-title game-title"
-      "player player score score computer computer "
-      "player-hand player-hand player-hand computer-hand computer-hand computer-hand"
+      "player player . .  computer computer "
+      "player-hand player-hand   score score computer-hand computer-hand"
       "rock rock paper paper scissors scissors";
+
+text-align:center; /*!! why does this align all content to center? interesting... !!*/
 }
 
 .header {
     grid-area: header;
-    background-color:rgb(131, 108, 196);
 }
 
 .header-text {
     text-align:center;
-    color:white;
-    font-family: 'Comfortaa', cursive;
-    font-size:3rem;
+    font-size:4rem;
 }
 
 .game-title{
     grid-area: game-title;
-    background-color:rgb(189, 234, 141);
+
+}
+.game-title-text {
+    padding:0px;
+    margin:0px;
+    font-size:2rem;
 }
 
-.players {
+.player-wrapper {
+
     grid-area: player;
-    background-color:rgb(7, 129, 7);
 }
 
 .score {
     grid-area: score;
-    background-color:rgb(0, 228, 102);
 }
 
-.computer {
+.computer-wrapper {
     grid-area: computer;
-    background-color:rgb(235, 89, 198);
+
 }
+
+
+
+.player, .computer {
+font-size:2rem;
+}
+
 
 .player-hand {
+    margin:0px;
+}
+
+.player-hand-wrapper {
     grid-area: player-hand;
-    background-color:rgb(197, 123, 38);
+
+}
+.computer-hand-wrapper{
+    grid-area: computer-hand;
 }
 
 .computer-hand{
-    grid-area: computer-hand;
-    background-color:rgb(199, 47, 80);
+    transform: scaleX(-1);
 }
 
 
 .rock {
     grid-area: rock;
-    background-color:rgb(130, 177, 43);
 }
 
 .paper {
     grid-area: paper;
-    background-color:rgb(29, 27, 160);
 }
 
 
 .scissors {
     grid-area: scissors;
-    background-color:rgb(18, 97, 97);
 }
+
+/* CSS */
+.button {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      color: #000;
+      background-color:white;
+      border-radius:10px;
+      text-align:center;
+      line-height: 35px;
+      cursor: pointer;
+      border: 3px solid;
+      width: 220px;
+      padding-bottom: 0.25em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      
+    }
+    
+    .button:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 5px;
+      left: 5px;
+    }
+    
+    
