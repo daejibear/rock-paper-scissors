@@ -22,11 +22,14 @@
 <div class="header"><p class="header-text">sunny's cafe</p>
 </div>
 
-
-<div class="game-title"><p class="game-title-text">rock paper scissors</p></div>
 <div class="player-wrapper"><p class="player">player</p></div>
-<div class="score">score</div>
+
+<div class="score"><p><span id="player-score" >0</span> : <span id="computer-score" >0</span></p></div>
+
 <div class="computer-wrapper"><p class="computer">computer</p></div>
+
+<div class="outcome-wrapper">
+<p id="outcome">vs</p></div>
 
 <div class="player-hand-wrapper"><img src="images/p-rock.png" id="player-hand"alt="Player's Hand"></div>
 
@@ -38,9 +41,17 @@
 
 <div class="scissors"><button class="button" id="scissors">scissors</button></div>
 
+</div>
+
+<div class="game-end-wrapper">
+<p><span id="player-score" >0</span> : <span id="computer-score" >0</span></p>
+<p id="game-end-result">result</p>
+
+<button class="end-button">play again</button>
 
 </div>
 
 <script src="script2.js"></script>
 </body>
 </html>
+

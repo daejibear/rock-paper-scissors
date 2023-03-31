@@ -14,9 +14,8 @@ margin:auto;
     grid-template-rows:auto;
     grid-template-areas: 
       "header header header header header header"
-      "game-title game-title game-title game-title game-title game-title"
-      "player player . .  computer computer "
-      "player-hand player-hand   score score computer-hand computer-hand"
+      "player player score score  computer computer "
+      "player-hand player-hand outcome-wrapper outcome-wrapper computer-hand computer-hand"
       "rock rock paper paper scissors scissors";
 
 text-align:center; /*!! why does this align all content to center? interesting... !!*/
@@ -27,7 +26,6 @@ text-align:center; /*!! why does this align all content to center? interesting..
 }
 
 .header-text {
-    text-align:center;
     font-size:4rem;
 }
 
@@ -35,24 +33,34 @@ text-align:center; /*!! why does this align all content to center? interesting..
     grid-area: game-title;
 
 }
-.game-title-text {
-    padding:0px;
-    margin:0px;
-    font-size:2rem;
+
+.outcome-wrapper {
+    line-height:10rem;
+    font-size:1.5rem;
+    grid-area:outcome-wrapper;
 }
 
 .player-wrapper {
-
+    letter-spacing:2px;
     grid-area: player;
 }
-
-.score {
-    grid-area: score;
-}
-
 .computer-wrapper {
+    letter-spacing:2px;
     grid-area: computer;
 
+}
+
+
+.score {
+    font-size:2rem;
+letter-spacing:10px;
+}
+.versus{
+line-height: 10rem;
+
+}
+.score {
+    grid-area: score;
 }
 
 
@@ -67,6 +75,7 @@ font-size:2rem;
 }
 
 .player-hand-wrapper {
+
     grid-area: player-hand;
 
 }
@@ -92,8 +101,21 @@ font-size:2rem;
     grid-area: scissors;
 }
 
+
+.game-end-wrapper {
+visibility: hidden;
+text-align:center; 
+margin:0px;
+padding:0px;
+background-color:rgba(255, 255, 255, 0.925);
+height:100%;
+width:100%;
+position:absolute;
+top:0;
+}
+
 /* CSS */
-.button {
+.button, .end-button{
       font-family: 'Roboto', sans-serif;
       font-size: 1.3rem;
       letter-spacing: 2px;
@@ -115,7 +137,7 @@ font-size:2rem;
       
     }
     
-    .button:active {
+    .button:active, .end-button{
       box-shadow: 0px 0px 0px 0px;
       top: 5px;
       left: 5px;
