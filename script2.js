@@ -11,7 +11,6 @@ let computerScoreEl = document.getElementById('computer-score');
 let playerScore = 0;
 let computerScore = 0;
 let gameResultEl = document.getElementById('game-end-result')
-let scoreResult = document.getElementById('score-results');
 let endBtn = document.getElementById('end-button');
 
 
@@ -131,7 +130,7 @@ function gameOutcome () {
         } else if ( playerSelection == "rock" && computerSelection == "rock") {
             outcomeEl.textContent = "it's a draw!";
         } else {
-            outcomeEl.textContent = "computer wins the round!";
+            outcomeEl.textContent = "computer wins !";
           computerScore += 1;
         }
     };
@@ -141,12 +140,10 @@ function gameOutcome () {
 function score () {
     if (playerScore == 3) {
         outcomeEl.textContent = `you won the game!`;
-        scoreResult.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
         document.querySelector(".game-end-wrapper").style.visibility = "visible"; 
      }else if (computerScore == 3) {
         outcomeEl.textContent = "you lost the game!";
         document.querySelector(".game-end-wrapper").style.visibility = "visible"; 
-        scoreResult.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
      }
         console.log(`after${playerScore}`)
     }
