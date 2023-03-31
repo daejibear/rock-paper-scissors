@@ -11,6 +11,10 @@ let computerScoreEl = document.getElementById('computer-score');
 let playerScore = 0;
 let computerScore = 0;
 let gameResultEl = document.getElementById('game-end-result')
+let scoreResult = document.getElementById('score-results');
+let endBtn = document.getElementById('end-button');
+
+
 
 //player Score Count
 playerHandImg.src=`images/p-rock.png`; // this keeps it so when We press the button, it goes back to rock (starting position)
@@ -43,7 +47,13 @@ iterations: 10000 //this repeats the animation 1 time only.
 });
 
 
-
+endBtn.addEventListener ('click', () => {
+    document.querySelector(".game-end-wrapper").style.visibility = "hidden"; 
+        playerScore = 0;
+        computerScore = 0;
+        playerScoreEl.textContent = playerScore;
+        computerScoreEl.textContent = computerScore;
+});
 
 //button selection
 btn.forEach((button) => { 
@@ -106,13 +116,13 @@ randomNumber =
 //game rules:
 function gameOutcome () {
     if (playerSelection == "rock" && computerSelection == "scissors") {
-        outcomeEl.textContent = "you win!";
+        outcomeEl.textContent = "you win the round!";
      playerScore += 1;
         } else if (playerSelection == "paper" && computerSelection == "rock") {
-            outcomeEl.textContent = "you win!";
+            outcomeEl.textContent = "you win the round!";
             playerScore += 1;
         } else if (playerSelection == "scissors" && computerSelection == "paper") {
-            outcomeEl.textContent = "you win!";
+            outcomeEl.textContent = "you win the round!";
             playerScore += 1;
         } else if ( playerSelection == "scissors" && computerSelection == "scissors") {
             outcomeEl.textContent = "it's a draw!";
@@ -121,7 +131,7 @@ function gameOutcome () {
         } else if ( playerSelection == "rock" && computerSelection == "rock") {
             outcomeEl.textContent = "it's a draw!";
         } else {
-            outcomeEl.textContent = "computer wins!";
+            outcomeEl.textContent = "computer wins the round!";
           computerScore += 1;
         }
     };
@@ -130,11 +140,13 @@ function gameOutcome () {
 //winner wins after 3 wins
 function score () {
     if (playerScore == 3) {
-        gameResultEl.textContent = "you won the game!";
+        outcomeEl.textContent = `you won the game!`;
+        scoreResult.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
         document.querySelector(".game-end-wrapper").style.visibility = "visible"; 
      }else if (computerScore == 3) {
-        gameResultEl.textContent = "you lost the game!";
+        outcomeEl.textContent = "you lost the game!";
         document.querySelector(".game-end-wrapper").style.visibility = "visible"; 
+        scoreResult.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
      }
         console.log(`after${playerScore}`)
     }
@@ -150,7 +162,6 @@ function game () {
     gameOutcome();
     playerScoreEl.textContent = playerScore;
 computerScoreEl.textContent = computerScore;
-
 
 setTimeout("score()",10);
 
