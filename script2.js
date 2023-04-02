@@ -46,12 +46,14 @@ iterations: 10000 //this repeats the animation 1 time only.
 });
 
 
+//play again button
 endBtn.addEventListener ('click', () => {
     document.querySelector(".game-end-wrapper").style.visibility = "hidden"; 
         playerScore = 0;
         computerScore = 0;
         playerScoreEl.textContent = playerScore;
         computerScoreEl.textContent = computerScore;
+        document.querySelector(".buttons").style.visibility = "visible"; 
 });
 
 //button selection
@@ -140,9 +142,16 @@ function gameOutcome () {
 function score () {
     if (playerScore == 3) {
         outcomeEl.textContent = `you won the game!`;
+        
+        document.querySelector(".buttons").style.visibility = "hidden"; 
+        //
+
         document.querySelector(".game-end-wrapper").style.visibility = "visible"; 
      }else if (computerScore == 3) {
         outcomeEl.textContent = "you lost the game!";
+
+        document.querySelector(".buttons").style.visibility = "hidden"; 
+        //
         document.querySelector(".game-end-wrapper").style.visibility = "visible"; 
      }
         console.log(`after${playerScore}`)
